@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>30-Day Healthy Muscle Plan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background-color: #4B5563; border-radius: 3px; }
+  </style>
+  <script>
+    // Dark Mode Toggle with localStorage
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark") document.documentElement.classList.add("dark");
+    });
+    function toggleTheme() {
+      document.documentElement.classList.toggle("dark");
+      const theme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+      localStorage.setItem("theme", theme);
+    }
+
+    // Toggle collapsible sections
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      section.classList.toggle("max-h-0");
+      section.classList.toggle("max-h-screen");
+    }
+
+    // Toggle mobile sidebar
+    function toggleSidebar() {
+      document.getElementById("mobile-sidebar").classList.toggle("-translate-x-full");
+    }
+  </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans transition-colors duration-300 flex">
+
+  <!-- Sidebar for Mobile -->
+  <aside id="mobile-sidebar" class="fixed top-0 left-0 h-full w-64 bg-blue-600 dark:bg-gray-800 text-white transform -translate-x-full transition-transform duration-300 z-50 md:hidden">
+    <div class="p-4 flex justify-between items-center border-b border-blue-700 dark:border-gray-700">
+      <h2 class="text-lg font-bold">Menu</h2>
+      <button onclick="toggleSidebar()" class="text-white text-xl"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="flex flex-col mt-4 space-y-2 px-4">
+      <button onclick="document.getElementById('daily-routine').scrollIntoView({behavior:'smooth'})">Daily Routine</button>
+      <button onclick="document.getElementById('workout-schedule').scrollIntoView({behavior:'smooth'})">Workout Schedule</button>
+      <button onclick="document.getElementById('meal-plan').scrollIntoView({behavior:'smooth'})">Meal Plan</button>
+      <button onclick="document.getElementById('tips').scrollIntoView({behavior:'smooth'})">Tips</button>
+    </nav>
+  </aside>
+
+  <div class="flex-1 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="flex justify-between items-center p-4 bg-blue-600 dark:bg-gray-800 shadow-md sticky top-0 z-40">
+      <div class="flex items-center space-x-4">
+        <button onclick="toggleSidebar()" class="md:hidden text-white text-2xl"><i class="fas fa-bars"></i></button>
+        <h1 class="text-lg md:text-xl font-bold text-white">30-Day Muscle Plan</h1>
+      </div>
+      <button onclick="toggleTheme()" class="text-white text-xl p-2 rounded hover:bg-blue-500 dark:hover:bg-gray-700 transition">
+        <i class="fas fa-moon"></i>
+      </button>
+    </header>
+
+    <main class="max-w-5xl mx-auto p-4 space-y-6 md:space-y-12">
+
+      <!-- Title Section -->
+      <section class="text-center space-y-2 md:space-y-4">
+        <h2 class="text-3xl md:text-4xl font-bold">30-Day Healthy Weight Gain + Muscle Building Plan</h2>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300">Lean muscle gain, arms & thighs focus, office-friendly schedule</p>
+      </section>
+
+      <!-- Daily Routine -->
+      <section id="daily-routine" class="space-y-2">
+        <button onclick="toggleSection('daily-content')" class="w-full text-left bg-blue-500 dark:bg-gray-700 text-white font-semibold p-3 rounded flex justify-between items-center shadow-md hover:bg-blue-600 dark:hover:bg-gray-600 transition">
+          Daily Routine
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div id="daily-content" class="overflow-hidden max-h-0 transition-all duration-500">
+          <div class="space-y-2 mt-2">
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <p class="font-semibold">7:00 AM</p>
+              <p>Warm water + soaked almonds, walnuts, raisins</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Kickstart metabolism</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <p class="font-semibold">7:30–8:30 AM</p>
+              <p>Workout</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Arms/Legs split routine</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <p class="font-semibold">8:45 AM</p>
+              <p>High-protein breakfast: 3 eggs + oats + milk</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <p class="font-semibold">11:00 AM</p>
+              <p>Snack: Fruit + handful nuts</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <p class="font-semibold">2:00 PM</p>
+              <p>Lunch: Rice/roti + chicken/fish + veggies</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <p class="font-semibold">5:00 PM</p>
+              <p>Snack: Greek yogurt + banana</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <p class="font-semibold">8:00 PM</p>
+              <p>Dinner: Rice/roti + dal + paneer/chicken/fish</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <p class="font-semibold">10:00 PM</p>
+              <p>Pre-bed drink: Warm milk with turmeric/almonds</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Workout Schedule -->
+      <section id="workout-schedule" class="space-y-2">
+        <button onclick="toggleSection('workout-content')" class="w-full text-left bg-blue-500 dark:bg-gray-700 text-white font-semibold p-3 rounded flex justify-between items-center shadow-md hover:bg-blue-600 dark:hover:bg-gray-600 transition">
+          Workout Schedule
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div id="workout-content" class="overflow-hidden max-h-0 transition-all duration-500">
+          <div class="space-y-2 mt-2">
+            <p class="font-semibold">Arms (Mon/Wed/Fri)</p>
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <ul class="list-disc list-inside space-y-1">
+                <li>Push-ups: 3x12–15 (5 min)</li>
+                <li>Bicep Curls: 3x12 (6 min)</li>
+                <li>Tricep Dips: 3x12 (6 min)</li>
+                <li>Shoulder Press: 3x12 (6 min)</li>
+                <li>Plank: 3x45 sec (4 min)</li>
+              </ul>
+            </div>
+            <p class="font-semibold mt-2">Legs/Thighs (Tue/Thu/Sat)</p>
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <ul class="list-disc list-inside space-y-1">
+                <li>Squats: 3x15 (6 min)</li>
+                <li>Lunges: 3x12 each leg (6 min)</li>
+                <li>Wall Sit: 3x45 sec (4 min)</li>
+                <li>Glute Bridge: 3x15 (5 min)</li>
+                <li>Calf Raises: 3x20 (5 min)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Weekly Meal Plan -->
+      <section id="meal-plan" class="space-y-2">
+        <button onclick="toggleSection('meal-content')" class="w-full text-left bg-blue-500 dark:bg-gray-700 text-white font-semibold p-3 rounded flex justify-between items-center shadow-md hover:bg-blue-600 dark:hover:bg-gray-600 transition">
+          Weekly Meal Plan
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div id="meal-content" class="overflow-hidden max-h-0 transition-all duration-500">
+          <div class="space-y-2 mt-2">
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <p class="font-semibold">Breakfast 8:45 AM</p>
+              <p>3 eggs + oats (50g) + milk (250ml)</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <p class="font-semibold">Snack 11:00 AM</p>
+              <p>1 apple + 10 almonds</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <p class="font-semibold">Lunch 2:00 PM</p>
+              <p>2 rotis + chicken/fish (150g) + veggies</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <p class="font-semibold">Snack 5:00 PM</p>
+              <p>Greek yogurt (150g) + banana</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <p class="font-semibold">Dinner 8:00 PM</p>
+              <p>Rice (150g) + dal (100g) + paneer/chicken (150g)</p>
+            </div>
+            <div class="p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+              <p class="font-semibold">Pre-bed 10:00 PM</p>
+              <p>Warm milk (200ml) + 5 almonds</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tips -->
+      <section id="tips" class="space-y-2">
+        <button onclick="toggleSection('tips-content')" class="w-full text-left bg-blue-500 dark:bg-gray-700 text-white font-semibold p-3 rounded flex justify-between items-center shadow-md hover:bg-blue-600 dark:hover:bg-gray-600 transition">
+          Tips & Notes
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div id="tips-content" class="overflow-hidden max-h-0 transition-all duration-500">
+          <div class="space-y-2 mt-2 p-3 bg-white dark:bg-gray-800 rounded shadow hover:shadow-lg transition">
+            <ul class="list-disc list-inside space-y-1">
+              <li>Hydrate: Drink 2.5–3 liters of water daily.</li>
+              <li>Protein: Aim for 1.6–1.8 g per kg body weight.</li>
+              <li>Progressive overload: Gradually increase weights/reps.</li>
+              <li>Sleep: Ensure 7–8 hours of quality rest.</li>
+              <li>Track progress: Weight, arm & thigh circumference, strength gains.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center p-4 mt-4 bg-blue-600 dark:bg-gray-800 text-white">
+      <p>&copy; 2025 30-Day Muscle Building Plan</p>
+    </footer>
+  </div>
+</body>
+</html>
